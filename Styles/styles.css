@@ -1,0 +1,71 @@
+body {
+    padding: 0;
+    text-align: center;
+  }
+
+  #game-intro {
+    padding: 20px 0px;
+  }
+
+.game-container{
+    background-color: aquamarine;
+    width: 100vw;
+    padding: 20px 0px;
+    display: flex;
+
+}
+
+.player {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+    #player1 {
+        background-color: blue;
+        float: left;
+        justify-content: center;
+        align-items: flex-start;
+
+    }
+
+    #player2 {
+        background-color: red;
+        float: right;
+        justify-content: center;
+        align-items: flex-end;
+
+    }
+
+
+
+.progress-bar {
+    width: 600px;
+    height: 20px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+    #lifeBar1{
+    background-color: blue;
+    float: left;
+
+    }
+
+    #lifeBar2{
+        background-color: red;
+        float: right;
+
+    }
+
+
+.progress-fill {
+    height: 100%;
+}
+
+
+#game-end {
+    display: none;
+  }
+  
