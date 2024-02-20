@@ -7,11 +7,13 @@ body {
     padding: 20px 0px;
   }
 
-.game-container{
+.gameContainer{
     background-color: aquamarine;
-    width: 100vw;
-    padding: 20px 0px;
+    width: 1000px;
+    height: 50vW;
+    padding: 200px;
     display: flex;
+    position: relative;
 
 }
 
@@ -23,19 +25,17 @@ body {
 
     #player1 {
         background-color: blue;
-        float: left;
-        justify-content: center;
-        align-items: flex-start;
+        
 
     }
 
     #player2 {
         background-color: red;
-        float: right;
-        justify-content: center;
-        align-items: flex-end;
+        
 
     }
+
+
 
 
 
