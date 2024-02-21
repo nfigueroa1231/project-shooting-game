@@ -1,62 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/styles.css" />
-    <title>ROBOTS ON TEXAS</title>
-  </head>
-  <body>
-    <main></main>
-      <!-- #game-intro is initially shown in game screen -->
-      <div id="game-intro"></div>
 
-        <!-- <img bottom game design> -->
-       <button id="button-Intro">Start Intro</button>
-       <!-- <p>The cowboys are all living in their daily routine.
-        until... they hear an explosion 
-        ROBOTS!!!! 
-        They came to invade Texas, now what are we going to do???
-        You are our only salvation.
-        "Bill Miller" the best gunfighter in El Paso, Texas. //(Foto de vaquero)
-        Shoot very Robot that appears in you're way.
-        Good Luck!</p> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/styles.css" />
+  <title>ROBOTS ON TEXAS</title>
+</head>
+
+<body>
+  <main></main>
+  <!-- #game-intro is initially shown in game screen -->
+  <div id="game-intro"></div>
+
+  <button id="button-Intro">Start Intro</button>
+        <!-- <p>The cowboys are all living in their daily routine.</p>
+        <p>Until... they hear an explosion </p>
+        <p>ROBOTS!!!</p>
+        <p>They came to invade Texas, now what are we going to do??</p>
+        <p>You are our only salvation</p>
+        <p>"Bill Miller" the best gunfighter in El Paso, Texas. //(Foto de vaquero) </p>
+        <p>Shoot very Robot that appears in you're way.</p>
+        <p>Good Luck!</p> -->
 
 
-     <!-- #game- cover page of game in start screen -->
-     <button id="start-Game">Start Game</button>
-     <!-- <p>Use the left arrow to go back, up arrow to jump, and right arrow to go foward to control "Bill Miller" and shift to shoot. </p>
-     <p>Use the "A" to go back, "W" to jump and, "D" to go foward to control the Robot and shift to shoot. </p> -->
 
-      <div class="gameContainer">
+  <!-- #game- cover page of game in start screen -->
+  <button id="start-Game">Start Game</button>
+
+
+  <!-- <p>Use the left arrow to go back, up arrow to jump, and right arrow to go foward to control "Bill Miller" and shift to shoot. </p>
+     <p>Use the "A" to go back, "W" to jump and, "D" to go foward to control the "Robot" and shift to shoot. </p> -->
+
+  <div class="gameContainer">
+    <div id="life">
+
+      <div id="lifeFill1" class="progress-fill">
+
         <div id="lifeBar1" class="progress-bar">
-          <div id="lifeFill1" class="progress-fill"></div>
-          </div>
-    
-          <div id="lifeBar2" class="progress-bar">
-            <div id="lifeFill2" class="progress-fill"></div>
-            </div>
-           
-            <div id="player1" class="player"></div>
-            <div id="player2" class="player"></div>
-      
-    </div>
-  
-
-     <div id="game-screen"></div>
-
-      
-      <div id="game-end">
-        <!-- <img bottom game design> -->
-        <h1>Game Over</h1>
-        <br />
-        <button id="restart-button">Restart</button>
+        </div>
       </div>
-    </main>
+  
+      <div id="lifeFill2" class="progress-fill">
+
+        <div id="lifeBar2" class="progress-bar">
+        </div>
+      </div>
+
+    </div>
 
 
-    <script type="text/javascript" src="js/game.js"></script>
-    <script type="text/javascript" src="js/players.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-  </body>
+    <div id="player1" class="player"></div>
+    <div id="player2" class="player"></div>
+
+  </div>
+
+
+  <div id="game-screen"></div>
+
+
+  <div id="game-end">
+    <!-- <img bottom game design> -->
+    <h1>Game Over</h1>
+    <br />
+    <button id="restart-button">Restart</button>
+  </div>
+  </main>
+
+
+  <script type="text/javascript" src="js/game.js"></script>
+  <script type="text/javascript" src="js/players.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+
 </html>

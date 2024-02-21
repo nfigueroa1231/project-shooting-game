@@ -9,13 +9,23 @@ body {
 
 .gameContainer{
     background-color: aquamarine;
-    width: 1000px;
+    width: 76vw;
     height: 50vW;
     padding: 200px;
-    display: flex;
-    position: relative;
+    /* display: flex; */
+    /* justify-content: center; */
 
 }
+
+#life {
+    width: 100%;
+    /* position: absolute; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 .player {
     width: 50px;
@@ -52,16 +62,30 @@ body {
     position: relative;
 }
 
+    #lifeFill1{
+
+    /* float: left; */
+    width: 40%;
+
+    }
+
+    #lifeFill2{
+        /* background-color: red; */
+        /* float: right; */
+        width: 40%;
+    }
+
     #lifeBar1{
     background-color: blue;
     float: left;
+    width: 100%;
 
     }
 
     #lifeBar2{
         background-color: red;
         float: right;
-
+        width: 100%;
     }
 
 
@@ -70,7 +94,4 @@ body {
 }
 
 
-#game-end {
-    display: none;
-  }
   

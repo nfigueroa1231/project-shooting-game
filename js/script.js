@@ -9,11 +9,15 @@ document.addEventListener("DOMContentLoaded", function () {
     let player1Jumping = false;
     let player1Shooting = false;
 
-    let player2X = 1100;
+    let player2X = 1600;
     let player2Y = 500;
     let player2Jumping = false;
     let player2Shooting = false;
 
+    let player1Life = 100
+    let player2Life = 100
+
+    let isGameOver = false
 
 
     function updatePlayers() {
@@ -45,9 +49,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 const shotRect = shotElement.getBoundingClientRect();
 
                 if (player === player1 && isColliding(player2Rect, shotRect)) {
-                    handleCollision(player2);
+                    // gameContainer.removeChild(shotElement);
+                    handleCollision(player2, gameContainer, shotElement);
                 } else if (player === player2 && isColliding(player1Rect, shotRect)) {
-                    handleCollision(player1);
+                    // gameContainer.removeChild(shotElement);
+                    handleCollision(player1, gameContainer, shotElement);
                 } else {
                     requestAnimationFrame(moveShot);
                 }
@@ -62,18 +68,43 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function isColliding(rect1, rect2) {
-        return !(rect1.right < rect2.left ||
-            rect1.left > rect2.right ||
-            rect1.bottom < rect2.top ||
-            rect1.top > rect2.bottom);
+        return !(rect1.right < rect2.left || rect1.left > rect2.right || rect1.bottom < rect2.top || rect1.top > rect2.bottom);
     }
 
-    function handleCollision(playerHit) {
-        // Handle collision with the opposing player (e.g., reduce health, etc.)
-        // For now, just remove the shot element
-        gameContainer.removeChild(shotElement);
-        player1Shooting = false;
-        player2Shooting = false;
+    function handleCollision(player, gameContainer, shot) {
+        console.log("Player who is it", player)
+        let life1 = document.getElementById('lifeBar1')
+        let life2 = document.getElementById('lifeBar2')
+
+        if (player.id === 'player1') {
+            console.log("PLAYER 1 SHOT!!!")
+            player1Life -= 16.7
+            // player2Life += 8.35
+            if (player1Life <= 0) {
+                life1.remove()
+                player1Life = 0
+                player2Life = 100
+                gameOver()
+            }
+            life1.style.width = `${player1Life}%`
+            life2.style.width = `${player2Life}%`
+            player2Shooting = false;
+        } else {
+            player2Life -= 16.7
+            // player1Life += 8.35
+            if (player2Life <= 0) {
+                life2.remove()
+                player2Life = 0
+                player1Life = 100
+                gameOver()
+            }
+            life1.style.width = `${player1Life}%`
+            life2.style.width = `${player2Life}%`
+            player1Shooting = false;
+        }
+       
+        gameContainer.removeChild(shot);
+      
     }
 
 
@@ -106,43 +137,66 @@ document.addEventListener("DOMContentLoaded", function () {
                     requestAnimationFrame(moveUp);
                 }
             }
-        
-            document.addEventListener("keydown", function (event) {
-                switch (event.key) {
-                    case "ArrowUp":
-                        jump(player2, player2Jumping);
+
+        function gameOver() {
+            console.log("GAME OVER!!!!")
+            isGameOver = true
+            document.removeEventListener('keydown', isGameOverReally, true)
+            gameContainer.style.visibility = 'hidden'
+            gameContainer.style.height = '0px'
+        }
+
+        function isGameOverReally(event) {
+            if (isGameOver) {
+                return true
+            }
+
+            //player 2 controls
+            switch (event.key) {
+                case "ArrowUp":
+                    jump(player2, player2Jumping);
+                    break;
+                case "ArrowRight":
+                    player2X = Math.min(player2X + 30, gameContainer.offsetWidth - 50); 
+                    break;
+                case "ArrowLeft":
+                    player2X = Math.max(player2X - 30, 0);
+                    break;
+                    case "Enter":
+                        player2Shooting = true;
+                        createShot(player2);
                         break;
-                    case "ArrowRight":
-                        player2X = Math.min(player2X + 30, gameContainer.offsetWidth - 50); 
-                        break;
-                    case "ArrowLeft":
-                        player2X = Math.max(player2X - 30, 0);
-                        break;
-                        case "Enter":
-                            player2Shooting = true;
-                            createShot(player2);
-                            break;
+
+
     
+                    //player 1 controls
     
-        
-                        //player 1 controls
-        
-                    case "w":
-                        jump(player1, player1Jumping);
-                        break;
-                    case "d":
-                        player1X = Math.min(player1X + 30, gameContainer.offsetWidth - 50);      
-                        break;
-                    case "a":
-                        player1X = Math.max(player1X - 30, 0);
-                        break;
-                    case "Shift":
-                        player1Shooting = true;
-                        createShot(player1);
-                        break;
-                }
-                updatePlayers();
-            });
+                case "w":
+                    jump(player1, player1Jumping);
+                    break;
+                case "d":
+                    player1X = Math.min(player1X + 30, gameContainer.offsetWidth - 50);      
+                    break;
+                case "a":
+                    player1X = Math.max(player1X - 30, 0);
+                    break;
+                case "Shift":
+                    player1Shooting = true;
+                    createShot(player1);
+                    break;
+            }
             updatePlayers();
+        }
+        
+            document.addEventListener("keydown", isGameOverReally)
+            
+            
+          
+            updatePlayers();
+
+            let restartButton = document.getElementById('restart-button')
+            restartButton.addEventListener('click', () => {
+                window.location.reload()
+            })
         })
     
