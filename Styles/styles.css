@@ -35,8 +35,13 @@ body {
 
     }
 
-
-
+    .shot {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: rgb(6, 4, 6);
+        border-radius: 50%;
+    }
 
 
 .progress-bar {
