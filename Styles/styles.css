@@ -14,13 +14,10 @@ body {
     width: 76vw;
     height: 50vW;
     padding: 200px;
-    /* display: flex; */
-
 }
 
 #life {
     width: 100%;
-    /* position: absolute; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -35,7 +32,6 @@ body {
 }
 
     #player1 {
-        /* background-color: blue; */
         float: left;
         background-image: url('../images/cowboy.png');
         background-position: center;
@@ -45,7 +41,6 @@ body {
     }
 
     #player2 {
-        /* background-color: red; */
         
         float: right;
         background-image: url('../images/robot.png');
@@ -72,27 +67,23 @@ body {
 }
 
     #lifeFill1{
-
-    /* float: left; */
     width: 40%;
 
     }
 
     #lifeFill2{
-        /* background-color: red; */
-        /* float: right; */
         width: 40%;
     }
 
     #lifeBar1{
-    background-color: blue;
+    background-color: rgb(225, 0, 255);
     float: left;
     width: 100%;
 
     }
 
     #lifeBar2{
-        background-color: red;
+        background-color: rgb(0, 204, 255);
         float: right;
         width: 100%;
     }
@@ -112,11 +103,10 @@ body button {
     box-shadow: 0;
     border-radius: 5px;
     margin-bottom: 20px;
-    /* position: absolute; */
   }
 
 img {
-    width: 52%;
+    width: 40%;
     height: auto;
     display: block;
     padding-top: 0%;
@@ -125,6 +115,8 @@ img {
 }
 
 #game-end {
+    /* background-color: black; */
+    color: #fff;
     visibility: hidden;
     height: 0;
     overflow: hidden;
@@ -132,7 +124,6 @@ img {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    /* height: 80vh */
 }
   
 #gameContainer {
@@ -143,7 +134,6 @@ img {
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
-    /* padding: 0; */
 }
 
 
@@ -153,3 +143,18 @@ img {
     align-items: center;
     overflow: hidden;
 }
+
+
+#result {
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+background-color: #65c452;
+color: rgb(2, 4, 6);
+display: inline-block;
+text-align: center;
+width: 50%;
+height: 4%;
+font-size: x-large;
+}
+
+
+ 

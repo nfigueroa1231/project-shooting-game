@@ -1,4 +1,3 @@
-
 const gameContainer = document.getElementById('gameContainer')
 let introScreen =  document.getElementById('game-intro')
 let gameEndScreen = document.getElementById('game-end')
@@ -31,8 +30,8 @@ startButton.addEventListener('click', () => {
     startingButton()
 })
 
-document.addEventListener("keydown", isGameOverReally)
 
+document.addEventListener("keydown", isGameOverReally)
 
 
 function startingButton() {
@@ -68,7 +67,6 @@ function startingButton() {
     life2.style.width = `${player2Life}%`
 
     updatePlayers()
-    
 }
 
 
@@ -131,9 +129,7 @@ function handleCollision(player, gameContainer, shot) {
     if (player.id === 'player1') {
         console.log("PLAYER 1 SHOT!!!")
         player1Life -= 16.7
-        // player2Life += 8.35
         if (player1Life <= 0) {
-            // life1.remove()
             player1Life = 0
             player2Life = 100
             gameOver()
@@ -143,9 +139,7 @@ function handleCollision(player, gameContainer, shot) {
         player2Shooting = false;
     } else {
         player2Life -= 16.7
-        // player1Life += 8.35
         if (player2Life <= 0) {
-            // life2.remove()
             player2Life = 0
             player1Life = 100
             gameOver()
@@ -163,7 +157,7 @@ function handleCollision(player, gameContainer, shot) {
 function jump(player, jumpingState) {
     if (!jumpingState) {
         jumpingState = true;
-        let jumpHeight = 100;
+        let jumpHeight = 140;
 
         function moveUp() {
             player.style.top = (parseInt(player.style.top) - 5) + "px";
@@ -200,7 +194,7 @@ function gameOver() {
     gameContainer.style.padding = '0px'
 
     gameEndScreen.style.visibility = 'inherit'
-    gameEndScreen.style.height = '80vh'
+    gameEndScreen.style.height = '100vh'
 
     
 
@@ -210,7 +204,6 @@ function gameOver() {
         result.innerText = `The Cowboy won!  The Robots may resume their invasion another day...`
     }
 
-    
 }
 
 function isGameOverReally(event) {
@@ -259,7 +252,6 @@ function isGameOverReally(event) {
 
 restartButton.addEventListener('click', () => {
     console.log("RESTARTING!!!!")
-    // window.location.reload()
     startingButton()
 })
 
