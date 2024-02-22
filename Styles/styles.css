@@ -1,19 +1,20 @@
 body {
     padding: 0;
     text-align: center;
+    height: 99vh;
+    background-color:rgb(156 102 34);
   }
 
   #game-intro {
-    padding: 20px 0px;
+    padding: 0px;
   }
 
+ 
 .gameContainer{
-    background-color: aquamarine;
     width: 76vw;
     height: 50vW;
     padding: 200px;
     /* display: flex; */
-    /* justify-content: center; */
 
 }
 
@@ -28,21 +29,29 @@ body {
 
 
 .player {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 100px;
     position: absolute;
 }
 
     #player1 {
-        background-color: blue;
-        
+        /* background-color: blue; */
+        float: left;
+        background-image: url('../images/cowboy.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
 
     }
 
     #player2 {
-        background-color: red;
+        /* background-color: red; */
         
-
+        float: right;
+        background-image: url('../images/robot.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
     .shot {
@@ -94,4 +103,53 @@ body {
 }
 
 
+body button {
+    font-size: 30px;
+    background-color: black;
+    color: #fff;
+    padding: 20px 40px;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    /* position: absolute; */
+  }
+
+img {
+    width: 52%;
+    height: auto;
+    display: block;
+    padding-top: 0%;
+
+
+}
+
+#game-end {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    background-image: url('../images/GameOver.jpg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* height: 80vh */
+}
   
+#gameContainer {
+    visibility: hidden;
+    height: 0;
+    background-image: url('../images/stage.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    /* padding: 0; */
+}
+
+
+#game-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
