@@ -2,15 +2,15 @@ body {
     padding: 0;
     text-align: center;
     height: 99vh;
-    background-color:rgb(156 102 34);
-  }
+    background-color: rgb(156 102 34);
+}
 
-  #game-intro {
+#game-intro {
     padding: 0px;
-  }
+}
 
- 
-.gameContainer{
+
+.gameContainer {
     width: 76vw;
     height: 50vW;
     padding: 200px;
@@ -33,36 +33,36 @@ body {
 
 }
 
-    #player1 {
-        float: left;
-        background-image: url('../images/cowboy.png');
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 180px;
-        height: 180px;
-    }
+#player1 {
+    float: left;
+    background-image: url('../images/cowboy.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 180px;
+    height: 180px;
+}
 
-    #player2 {
-        
-        float: right;
-        background-image: url('../images/robot.png');
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 180px;
-        height: 180px;
-    }
+#player2 {
 
-    .shot {
-        position: absolute;
-        width: 5px;
-        height: 5px;
-        background-color: rgb(6, 4, 6);
-        border-radius: 50%;
-        margin-top: -80px;
+    float: right;
+    background-image: url('../images/robot.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 180px;
+    height: 180px;
+}
 
-    }
+.shot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: rgb(6, 4, 6);
+    border-radius: 50%;
+    margin-top: -80px;
+
+}
 
 
 .progress-bar {
@@ -73,27 +73,27 @@ body {
     position: relative;
 }
 
-    #lifeFill1{
+#lifeFill1 {
     width: 40%;
 
-    }
+}
 
-    #lifeFill2{
-        width: 40%;
-    }
+#lifeFill2 {
+    width: 40%;
+}
 
-    #lifeBar1{
+#lifeBar1 {
     background-color: rgb(225, 0, 255);
     float: left;
     width: 100%;
 
-    }
+}
 
-    #lifeBar2{
-        background-color: rgb(0, 204, 255);
-        float: right;
-        width: 100%;
-    }
+#lifeBar2 {
+    background-color: rgb(0, 204, 255);
+    float: right;
+    width: 100%;
+}
 
 
 .progress-fill {
@@ -110,7 +110,7 @@ body button {
     box-shadow: 0;
     border-radius: 5px;
     margin-bottom: 20px;
-  }
+}
 
 img {
     width: 40%;
@@ -122,7 +122,6 @@ img {
 }
 
 #game-end {
-    /* background-color: black; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
     color: #fff;
     visibility: hidden;
     height: 0;
@@ -132,7 +131,7 @@ img {
     background-size: contain;
     background-repeat: no-repeat;
 }
-  
+
 #gameContainer {
     visibility: hidden;
     height: 0;
@@ -153,15 +152,57 @@ img {
 
 
 #result {
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-background-color: #65c452;
-color: rgb(2, 4, 6);
-display: inline-block;
-text-align: center;
-width: 50%;
-height: 4%;
-font-size: x-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #65c452;
+    color: rgb(2, 4, 6);
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+    height: 4%;
+    font-size: x-large;
 }
 
 
- 
+
+h1 {
+    max-width: max-content;
+    margin: auto;
+    background: black;
+    color: rgb(245, 240, 240);
+}
+
+
+
+
+/* Tooltip container */
+#tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+
+}
+
+.wasd {
+    width: 10%;
+    width: 10%;
+}
+
+.shift {
+    width: 10%;
+    width: 10%;
+    padding-bottom: 15%;
+}
+
+.arrows {
+    width: 10%;
+    width: 10%;
+
+}
+
+
+.enter {
+    width: 10%;
+    width: 10%;
+
+}
+

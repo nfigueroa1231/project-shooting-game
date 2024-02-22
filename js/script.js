@@ -1,12 +1,15 @@
+
 const gameContainer = document.getElementById('gameContainer')
 let introScreen =  document.getElementById('game-intro')
 let gameEndScreen = document.getElementById('game-end')
 let startButton = document.getElementById('start-button')
+let tooltip =  document.getElementById('tooltip')  
 let restartButton = document.getElementById('restart-button')
 const player1 = document.getElementById("player1");
 const player2 = document.getElementById("player2");
 let life1 = document.getElementById('lifeBar1')
 let life2 = document.getElementById('lifeBar2')
+
 
 let result = document.getElementById('result')
 
@@ -50,12 +53,19 @@ function startingButton() {
     player1Life = 100
     player2Life = 100
     
+
+
+
+
+
     isGameOver = false 
     window.scrollTo(0, 0)
     console.log("STARTING!!!")
     introScreen.style.visibility = 'hidden'
     introScreen.style.height = '0'
 
+    tooltip.style.visibility = 'hidden'   
+    tooltip.style.height = '0'
     gameEndScreen.style.visibility = 'hidden'
     gameEndScreen.style.height = '0'
     
