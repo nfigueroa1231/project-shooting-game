@@ -26,6 +26,7 @@ let player2Life
 let isGameOver 
 
 
+
 startButton.addEventListener('click', () => {
     startingButton()
 })
@@ -83,17 +84,18 @@ function updatePlayers() {
 function createShot(player) {
     const shotElement = document.createElement("div");
     shotElement.className = "shot";
-    shotElement.style.left = (parseInt(player.style.left) + (player === player1 ? 50 : -50)) + "px"; // Adjust left position
+    shotElement.style.left = (parseInt(player.style.left) + (player === player1 ? 50 : -50)) + "px"; 
     shotElement.style.top = (parseInt(player.style.top) + 25) + "px";
     gameContainer.appendChild(shotElement);
 
-    const shotSpeed = (player === player1 ? 5 : -5); // Adjust shot speed and direction
+    const shotSpeed = (player === player1 ? 10 : -10); // Adjust shot speed and direction!
+
 
     function moveShot() {
         const currentLeft = parseInt(shotElement.style.left);
         if ((player === player1 && currentLeft < gameContainer.offsetWidth) ||
             (player === player2 && currentLeft > 0)) {
-            shotElement.style.left = (currentLeft + shotSpeed) + "px"; // Adjust left position
+            shotElement.style.left = (currentLeft + shotSpeed) + "px"; 
             // Check for collision with the opposing player
             const player1Rect = player1.getBoundingClientRect();
             const player2Rect = player2.getBoundingClientRect();
@@ -157,10 +159,10 @@ function handleCollision(player, gameContainer, shot) {
 function jump(player, jumpingState) {
     if (!jumpingState) {
         jumpingState = true;
-        let jumpHeight = 140;
+        let jumpHeight = 280;
 
         function moveUp() {
-            player.style.top = (parseInt(player.style.top) - 5) + "px";
+            player.style.top = (parseInt(player.style.top) - 10) + "px";
 
             if (parseInt(player.style.top) > player1Y - jumpHeight) {
                 requestAnimationFrame(moveUp);
