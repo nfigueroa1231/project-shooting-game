@@ -211,9 +211,9 @@ function gameOver() {
     
 
     if (player1Life <= 0) {
-        result.innerText = `The Robot won!  The Cowboy will come back to fight another day...`
+        result.innerText = `C-3PO won! Bill Miller will come back to fight another day...`
     } else {
-        result.innerText = `The Cowboy won!  The Robots may resume their invasion another day...`
+        result.innerText = `Bill Miller won! C-3PO may resume the invasion another day...`
     }
 
 }
