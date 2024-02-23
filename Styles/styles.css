@@ -35,7 +35,7 @@ body {
 
 #player1 {
     float: left;
-    background-image: url('/images/cowboy.png');
+    background-image: url('../images/cowboy.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -46,7 +46,7 @@ body {
 #player2 {
 
     float: right;
-    background-image: url('/images/robot.png');
+    background-image: url('../images/robot.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -126,7 +126,7 @@ img {
     visibility: hidden;
     height: 0;
     overflow: hidden;
-    background-image: url('/images/GameOver.jpg');
+    background-image: url('../images/GameOver.jpg');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -135,7 +135,7 @@ img {
 #gameContainer {
     visibility: hidden;
     height: 0;
-    background-image: url('/images/stage.webp');
+    background-image: url('../images/stage.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
