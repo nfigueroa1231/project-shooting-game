@@ -11,6 +11,12 @@ let life1 = document.getElementById('lifeBar1')
 let life2 = document.getElementById('lifeBar2')
 
 
+let player1LastShotTime = 0;
+let player2LastShotTime = 0;
+const shotCooldown = 700; // 2000 milliseconds (2 seconds)
+
+
+
 let result = document.getElementById('result')
 
 let player1X 
@@ -92,6 +98,15 @@ function updatePlayers() {
 
 
 function createShot(player) {
+
+    const currentTime = new Date().getTime();
+    const lastShotTime = player === player1 ? player1LastShotTime : player2LastShotTime;
+
+    if (currentTime - lastShotTime < shotCooldown) {
+        return;
+    }
+
+
     const shotElement = document.createElement("div");
     shotElement.className = "shot";
     shotElement.style.left = (parseInt(player.style.left) + (player === player1 ? 50 : -50)) + "px"; 
@@ -99,6 +114,14 @@ function createShot(player) {
     gameContainer.appendChild(shotElement);
 
     const shotSpeed = (player === player1 ? 10 : -10); // Adjust shot speed and direction!
+
+    if (player === player1) {
+        player1LastShotTime = currentTime;
+    } else {
+        player2LastShotTime = currentTime;
+    }
+
+
 
 
     function moveShot() {
