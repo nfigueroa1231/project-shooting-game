@@ -13,7 +13,7 @@ let life2 = document.getElementById('lifeBar2')
 
 let player1LastShotTime = 0;
 let player2LastShotTime = 0;
-const shotCooldown = 700; // 2000 milliseconds (2 seconds)
+const shotCooldown = 700; // timer
 
 
 
